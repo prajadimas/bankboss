@@ -7,7 +7,7 @@ module.exports = function (user) {
     console.log('using [QUERY]: SELECT balance FROM public.user WHERE user_account = \'' + user.user_account + '\' AND is_active = true')
     db.one('SELECT balance FROM public.user WHERE user_account = \'' + user.user_account + '\' AND is_active = true')
     .then(data => {
-      console.log('success [QUERY]: ') // success
+      console.log('success [QUERY]: ', data) // success
       resolve(data)
     })
     .catch(error => {

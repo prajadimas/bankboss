@@ -21,7 +21,7 @@ module.exports = function (authorizationCode, client) {
           account: result.user_account
         }
       }
-      console.log('success [QUERY]: ') // success
+      console.log('success [QUERY]: ', data) // success
       resolve(data)
     })
     .catch(error => {

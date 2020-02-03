@@ -7,6 +7,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
+const cors = require('cors')
 require('dotenv').config()
 
 const oauth = require('./oauth/index')
@@ -25,6 +26,7 @@ app.use(bodyParser.json({limit: '1mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '1mb', extended: true}))
 /* Configuration of the helmet security */
 app.use(helmet())
+app.use(cors())
 
 // ================== ROUTES FOR API REQUESTS =================== //
 // ============================================================== //

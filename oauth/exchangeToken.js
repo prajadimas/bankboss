@@ -16,9 +16,10 @@ module.exports = function (req, res) {
   // console.log(req.body)
   getClient(req.body.client_id,req.body.client_secret).then(client => {
     if (client) {
+      // console.log(client)
       getAuthorizationCode(base64url.decode(req.body.code),client).then(code => {
         if (code) {
-          // console.log(code.user)
+          // console.log(code)
           revokeAuthorizationCode(code).then(result => {
             // console.log(result)
             if (result) {
@@ -68,6 +69,7 @@ module.exports = function (req, res) {
         }
       })
       .catch(err => {
+        console.log(err)
         res.status(500).json({
           msg: 'Internal Server Error'
         })

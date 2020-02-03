@@ -14,6 +14,7 @@ const saveOTP = require('../modules/saveOTP')
 module.exports = function (req, res) {
   moment().tz("Asia/Jakarta").format()
   // console.log(req.headers)
+  console.log(req.body)
   if (req.headers.authorization.split(' ')[0] === 'Bearer') {
     getAccessToken(req.headers.authorization.split(' ')[1]).then(token => {
       if (token) {
