@@ -15,7 +15,7 @@ module.exports = {
     console.log('accessing [API]: ', req.method + ' ' + req.originalUrl || req.url, 'CLIENT ACCESS from', ip)
     res.setHeader('Access-Control-Allow-Origin', '*')
     console.log(req.body)
-    getUser(base64url.decode(req.body.user_account),req.body.password).then(user => {
+    getUser(req.body.user_account,req.body.password).then(user => {
       if (user) {
         return next()
       } else {
@@ -34,7 +34,7 @@ module.exports = {
   authorize: function (req, res) {
     moment().tz("Asia/Jakarta").format()
     // console.log(req.body)
-    getUser(base64url.decode(req.body.user_account),req.body.password).then(user => {
+    getUser(req.body.user_account,req.body.password).then(user => {
       if (user) {
         getClient(base64url.decode(req.body.client_id),null).then(client => {
           if (client) {
