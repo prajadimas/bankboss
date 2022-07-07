@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "generate-password": "^1.5.0",
     "helmet": "^3.21.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.27",
     "oauth2-server": "^3.0.1",
     "otp-generator": "^1.1.0",
