@@ -22,7 +22,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "oauth2-server": "^3.0.1",
-    "otp-generator": "^1.1.0",
+    "otp-generator": "^3.0.0",
     "pg-promise": "^10.3.5",
     "username-generator": "^1.1.0"
   },
